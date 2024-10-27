@@ -1,0 +1,61 @@
+---
+title: "My past experiences"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+---
+
+## Academic
+
+### Columbia University, Mailman School of Public Health – New York, NY 
+**MS. in Biostatistics (Public Health Data Science Track)** 						*September 2024 -- May 2026*\
+
+* Relevant Coursework: Epidemiology, Biostatistical Method, Data Science\
+
+### University of Rochester – Rochester, NY 
+**BS in Statistics & BA in Business & Actuarial Study Certificate** 						*September 2020 -- May 2024*\
+
+* GPA: 3.94/4.00 (Top 5%)\
+
+* Magna Cum Laude\
+
+* Beta Gamma Sigma - Lifelong Membership\
+
+* Dean’s List all eligible semesters\
+
+## Professional
+
+### Teaching Assistant – Advanced Stats and Math 
+**University of Rochester — Rochester, NY** 						_Jan 2023 – Dec 2023_
+
+*   Patiently held recitations and review sessions for students to reinforce concepts related to R, statistical modeling, and mathematical methods. 
+
+*   Created high quality recitation worksheets and weekly assignments
+
+*   Corrected weekly homework and held office hours to assist students with course materials.
+
+*   Effectively tutored over one hundred students, measurably improving their test scores.
+
+### Teaching Assistant –Categorical Data Analysis
+**University of Rochester — Rochester, NY**						_Aug 2023 – Dec 2023_
+*   Effectively corrected weekly homework and held office hours to assist students with course materials.
+
+*   Streamlined course content to enhance students' comprehension and application of categorical statistical methods.
+
+### Consulting Intern
+**Ernst & Young — Beijing, China** 								  _July 2023 – Sept 2023_
+
+*   Analyzed credit asset contracts utilizing financial instruments such as SPV and ABS. 
+
+*   Supported credit risk assessments by conducting statistical analysis of financial statements to evaluate companies' debt status and repayment capacity.
+
+*   Reviewed credit asset contracts for 20 companies, assessed financial statements for 100+ firms with rating rationale, and compiled litigation and execution reports for 300 enterprises.
+
+### Research Assistant
+**PBC School of Finance, Tsinghua University — Beijing, China** 				 _Dec 2022 – Feb 2023_
+
+*   Assisted with compiling research reports on China's public offering fund and high-net-worth wealth management clients.
+
+*   Utilized web scraping and data extraction techniques to gather financial data, contributing to detailed financial behavior analysis.
+

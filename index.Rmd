@@ -1,0 +1,21 @@
+---
+title: "Congyu Yang's Website"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+---
+
+## This is Congyu Yang's awesome website
+
+Hi all! Welcome to my website. I am currently a graduate student in Columbia University majoring in biostatistics. \
+
+In here, you can know me thoroughly.\
+
+Here is my picture!\
+
+<img src = "IMG_3723.JPG" style = "width:35%">
+
+If you would like to learn more about my past experiences, visit [this page](experience.html)
+
+
