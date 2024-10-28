@@ -12,55 +12,54 @@ library(tidyverse)
 library(p8105.datasets)
 library(plotly)
 
-data("nyc_airbnb")
+data("rest_inspec")
 
-nyc_airbnb =
-  nyc_airbnb %>% 
-  mutate(rating = review_scores_location/2) %>% 
-  select(rating,neighbourhood_group,neighbourhood,
-         room_type,lat,long,price) %>% 
-  drop_na(rating) %>% 
-  filter(neighbourhood_group == "Queens",
-         room_type == "Private room",
-         price %in% 0:200 )
+rest_inspec <-
+  rest_inspec %>% 
+  filter(boro == "MANHATTAN" & score %in% 0:100)
 ```
 
 Column {data-width=650}
 -----------------------------------------------------------------------
 
-### Chart A
+### Score Distribution based on Cuision Type
 
 ```{r}
-nyc_airbnb %>% 
-  mutate(neighbourhood = fct_reorder(neighbourhood,price)) %>% 
-  ungroup() %>% 
-  plot_ly(x = ~neighbourhood,y = ~ price,color = ~ neighbourhood,
-          type = "box")
+rest_inspec %>% 
+  group_by(cuisine_description) %>% 
+  mutate(text_label = str_c("Restaurant: ",dba,
+                            "\nScore: ",score)) %>%
+  mutate(cuisine_description = 
+           case_when(cuisine_description == 
+                       "Latin (Cuban, Dominican, Puerto Rican, South & Central American)" ~"Latin", 
+                     cuisine_description == "Bottled beverages, including water, sodas, juices, etc." ~ "Bottled beverages",T ~ cuisine_description)) %>% 
+  plot_ly(x = ~cuisine_description,y = ~ score,
+          text = ~ text_label,color = ~ cuisine_description,
+          type = "box",alpha = 0.5) %>% 
+  layout(xaxis = list(tickangle = -45,tickfont = list(size = 7)),
+         legend = list(font = list(size = 7)))
 ```
 
 Column {data-width=350}
 -----------------------------------------------------------------------
 
-### Chart B
+### Number of Restaurants under each Grade
 
 ```{r}
-nyc_airbnb %>% 
-  mutate(text_label = str_c("Price: ",price,
-                            "\nNeighborhood: ",neighbourhood),
-         ) %>% 
-  plot_ly(
-    x = ~lat,y = ~ long,color = ~ price,text = ~ text_label,
-    type = "scatter",mode = "markers",alpha = 0.5
-  )
+rest_inspec %>% 
+  drop_na(grade) %>% 
+  group_by(grade)%>% 
+  count(grade) %>%
+  plot_ly(x = ~grade,y = ~ n,type = "bar")
 ```
 
-### Chart C
+### Average Score for Different zipcode
 
 ```{r}
-nyc_airbnb %>% 
-  count(neighbourhood) %>% 
-  mutate(neighbourhood = fct_reorder(neighbourhood,n)) %>% 
-  plot_ly(x = ~ neighbourhood,y = ~n,
-          type = "bar")
+rest_inspec %>% mutate(zipcode = as.factor(zipcode)) %>% 
+  group_by(zipcode) %>% 
+  summarize(avg_score = mean(score)) %>% 
+  plot_ly(x = ~zipcode,y = ~ avg_score,
+         type = "scatter",mode = "line")
 ```
 
