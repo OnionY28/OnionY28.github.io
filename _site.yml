@@ -3,12 +3,12 @@ output_dir: "."
 navbar:
   title: "Congyu Yang's Website"
   right:
-    - text: "experience"
+    - text: "Experience"
       href: experience.html
     - icon: fa-envelope fa-lg
       href: mailto:<cy2751@cumc.columbia.edu>
     - icon: fa-github fa-lg
-      href: http://github.com/<OnionY28>/
+      href: https://github.com/OnionY28
     - icon: fa-brands fa-linkedin
       href: https://www.linkedin.com/in/congyu-yang-73a588304/
 output:
